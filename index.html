@@ -1,0 +1,649 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Prisonnier dans la brume</title>
+		<link rel="stylesheet" type="text/css" href="style/textual_style.css">
+		<script>
+			var etat_joueur = ["La blessure de votre bras irradie une légère chaleur. C'est presque agréable pour le moment.",
+								"La blessure de votre bras irradie une légère chaleur. C'est presque agréable pour le moment.",
+								"La blessure de votre bras irradie une légère chaleur. C'est presque agréable pour le moment.",
+								"La blessure de votre bras irradie une légère chaleur. C'est presque agréable pour le moment.",
+								"La blessure de votre bras irradie une légère chaleur. C'est presque agréable pour le moment.",
+								"La blessure de votre bras irradie une légère chaleur. C'est presque agréable pour le moment.",
+								"La blessure de votre bras irradie une légère chaleur. C'est presque agréable pour le moment.",
+								"La blessure de votre bras irradie une légère chaleur. C'est presque agréable pour le moment.",
+								"La blessure de votre bras irradie une légère chaleur. C'est presque agréable pour le moment.",
+								"La blessure de votre bras irradie une légère chaleur. C'est presque agréable pour le moment.",
+								"Votre blessure palpite, comme si vous aviez un deuxième cœur dans le bras. Sensation étrange mais pas trop dérangeante.",
+								"Votre blessure palpite, comme si vous aviez un deuxième cœur dans le bras. Sensation étrange mais pas trop dérangeante.",
+								"Votre blessure palpite, comme si vous aviez un deuxième cœur dans le bras. Sensation étrange mais pas trop dérangeante.",
+								"Votre blessure palpite, comme si vous aviez un deuxième cœur dans le bras. Sensation étrange mais pas trop dérangeante.",
+								"Votre blessure palpite, comme si vous aviez un deuxième cœur dans le bras. Sensation étrange mais pas trop dérangeante.",
+								"Votre blessure palpite, comme si vous aviez un deuxième cœur dans le bras. Sensation étrange mais pas trop dérangeante.",
+								"Votre blessure palpite, comme si vous aviez un deuxième cœur dans le bras. Sensation étrange mais pas trop dérangeante.",
+								"Votre blessure palpite, comme si vous aviez un deuxième cœur dans le bras. Sensation étrange mais pas trop dérangeante.",
+								"Votre blessure palpite, comme si vous aviez un deuxième cœur dans le bras. Sensation étrange mais pas trop dérangeante.",
+								"Votre blessure palpite, comme si vous aviez un deuxième cœur dans le bras. Sensation étrange mais pas trop dérangeante.",
+								"La douleur commence à remonter de votre bras jusque dans votre torse. C'est pas réellement un bon signe...",
+								"La douleur commence à remonter de votre bras jusque dans votre torse. C'est pas réellement un bon signe...",
+								"La douleur commence à remonter de votre bras jusque dans votre torse. C'est pas réellement un bon signe...",
+								"La douleur commence à remonter de votre bras jusque dans votre torse. C'est pas réellement un bon signe...",
+								"La douleur commence à remonter de votre bras jusque dans votre torse. C'est pas réellement un bon signe...",
+								"La douleur commence à remonter de votre bras jusque dans votre torse. C'est pas réellement un bon signe...",
+								"La douleur commence à remonter de votre bras jusque dans votre torse. C'est pas réellement un bon signe...",
+								"La douleur commence à remonter de votre bras jusque dans votre torse. C'est pas réellement un bon signe...",
+								"La douleur commence à remonter de votre bras jusque dans votre torse. C'est pas réellement un bon signe...",
+								"La douleur commence à remonter de votre bras jusque dans votre torse. C'est pas réellement un bon signe...",
+								"Respirer est douloureux. Le poison qui vous a été injecté a dû atteindre certains de vos organes. Vous commencez à perdre espoir...",
+								"Respirer est douloureux. Le poison qui vous a été injecté a dû atteindre certains de vos organes. Vous commencez à perdre espoir...",
+								"Respirer est douloureux. Le poison qui vous a été injecté a dû atteindre certains de vos organes. Vous commencez à perdre espoir...",
+								"Respirer est douloureux. Le poison qui vous a été injecté a dû atteindre certains de vos organes. Vous commencez à perdre espoir...",
+								"Respirer est douloureux. Le poison qui vous a été injecté a dû atteindre certains de vos organes. Vous commencez à perdre espoir...",
+								"Respirer est douloureux. Le poison qui vous a été injecté a dû atteindre certains de vos organes. Vous commencez à perdre espoir...",
+								"Respirer est douloureux. Le poison qui vous a été injecté a dû atteindre certains de vos organes. Vous commencez à perdre espoir...",
+								"Respirer est douloureux. Le poison qui vous a été injecté a dû atteindre certains de vos organes. Vous commencez à perdre espoir...",
+								"Respirer est douloureux. Le poison qui vous a été injecté a dû atteindre certains de vos organes. Vous commencez à perdre espoir...",
+								"Respirer est douloureux. Le poison qui vous a été injecté a dû atteindre certains de vos organes. Vous commencez à perdre espoir...",
+								"Vous tremblez de fièvre alors que la douleur se diffuse dans tout votre corps. Cet endroit maudit sera votre cimetière.",
+								"Vous tremblez de fièvre alors que la douleur se diffuse dans tout votre corps. Cet endroit maudit sera votre cimetière.",
+								"Vous tremblez de fièvre alors que la douleur se diffuse dans tout votre corps. Cet endroit maudit sera votre cimetière.",
+								"Vous tremblez de fièvre alors que la douleur se diffuse dans tout votre corps. Cet endroit maudit sera votre cimetière.",
+								"Vous tremblez de fièvre alors que la douleur se diffuse dans tout votre corps. Cet endroit maudit sera votre cimetière.",
+								"Vous tremblez de fièvre alors que la douleur se diffuse dans tout votre corps. Cet endroit maudit sera votre cimetière.",
+								"Vous tremblez de fièvre alors que la douleur se diffuse dans tout votre corps. Cet endroit maudit sera votre cimetière.",
+								"Vous tremblez de fièvre alors que la douleur se diffuse dans tout votre corps. Cet endroit maudit sera votre cimetière.",
+								"Vous tremblez de fièvre alors que la douleur se diffuse dans tout votre corps. Cet endroit maudit sera votre cimetière.",
+								"Vous tremblez de fièvre alors que la douleur se diffuse dans tout votre corps. Cet endroit maudit sera votre cimetière.",
+								"La douleur commence à vous submerger et vous sentez votre vision se troubler. La fin n'est plus très loin...",
+								"La douleur commence à vous submerger et vous sentez votre vision se troubler. La fin n'est plus très loin...",
+								"La douleur commence à vous submerger et vous sentez votre vision se troubler. La fin n'est plus très loin...",
+								"La douleur commence à vous submerger et vous sentez votre vision se troubler. La fin n'est plus très loin...",
+								"La douleur commence à vous submerger et vous sentez votre vision se troubler. La fin n'est plus très loin...",
+								"La douleur commence à vous submerger et vous sentez votre vision se troubler. La fin n'est plus très loin...",
+								"La douleur commence à vous submerger et vous sentez votre vision se troubler. La fin n'est plus très loin...",
+								"La douleur commence à vous submerger et vous sentez votre vision se troubler. La fin n'est plus très loin...",
+								"La douleur commence à vous submerger et vous sentez votre vision se troubler. La fin n'est plus très loin...",
+								"La douleur commence à vous submerger et vous sentez votre vision se troubler. La fin n'est plus très loin..."];
+		</script>
+	</head>
+	<body>	
+		<div class="centre">
+			<div class="sante" id="affichage_sante">
+				Vous êtes perdu dans vos rêves...
+			</div>
+			
+			<hr/>
+			
+			<!-- Choix de la difficulté -->
+			<div class="contenu t_bloc_999">
+				<p class="texte">Alors que vous étiez en train de passer un weekend à la montagne avec votre famille, vous vous réveillez seul dans le chalet que vous aviez loué. Presque tous les meubles semblent avoir disparus... Où êtes-vous ? Où sont ceux que vous aimez ?</p>
+				<p class="texte">Seul l'avenir vous le dira... ou pas. Si vous survivez.</p>
+				<p class="texte">Votre objectif est de réussir à vous enfuir le plus rapidement possible. Mais, avant tout, veuillez choisir votre difficulté.</p>
+				<hr/>
+				<p class="choix bloc_996">Facile. Vous n'avez pas envie d'être limité par le temps.</p>
+				<p class="choix bloc_997">Normal. Le jeu a été conçu avec cette difficulté.</p>
+				<p class="choix bloc_998">Difficile. Vous, vous êtes courageux !</p>
+			</div>
+			<!-- Fin choix difficulté -->
+
+			<div class="contenu t_bloc_1">
+				<p class="texte">Vous êtes assis sur une chaise, devant une table de bois. Vous êtes seul ici et le silence est total. La pièce comprend une porte et une fenêtre dont les volets sont fermés. Votre bras porte une marque assez visible, recouverte d'une légère croûte de sang séché.</p>
+				<hr/>
+				<p class="choix bloc_2">Se lever pour examiner la salle plus en détails.</p>
+				<p class="choix bloc_3">S'approcher de la fenêtre.</p>
+				<p class="choix bloc_4">Se diriger vers la porte.</p>
+				<p class="choix bloc_7">Observer de plus près la trace sur votre bras.</p>
+			</div>
+
+			<div class="contenu t_bloc_2">
+				<p class="texte">Vous vous levez de votre chaise pour examiner la salle. De la taille d'une chambre moyenne, ses murs sont fait d'un bois qui mériterait un bon ponçage. Le plancher est du même acabit et porte de nombreuses marques d'usage. La seule source de lumière provient d'une ampoule nue qui pend au plafond.</p>
+				<hr/>
+				<p class="choix bloc_1">S'asseoir.</p>
+				<p class="choix bloc_3">S'approcher de la fenêtre.</p>
+				<p class="choix bloc_4">Se diriger vers la porte.</p>
+			</div>
+			
+			<div class="contenu t_bloc_3">
+				<p class="texte">Vous remarquez des traces sur le chambranle de bois. Comme des marques de... griffes ?</p>
+				<hr/>
+				<p class="choix bloc_1">S'asseoir.</p>
+				<p class="choix bloc_5">Ouvrir la fenêtre.</p>
+				<p class="choix bloc_4">Se diriger vers la porte.</p>
+			</div>
+			
+			<div class="contenu t_bloc_4">
+				<p class="texte">Vous apercevez sur le seuil une large trace marron. Vous vous penchez pour mieux regarder... vous passez un index sur la tâche... c'est complètement sec. Est-ce que cela ne ressemblerait pas à du... sang séché ?</p>
+				<hr/>
+				<p class="choix bloc_1">S'asseoir.</p>
+				<p class="choix bloc_3">S'approcher de la fenêtre.</p>
+				<p class="choix bloc_8 invisible" id="piege_detecte">Ouvrir la porte et sortir en faisant attention au piège.</p>
+				<p class="choix bloc_6">Ouvrir la porte et sortir.</p>
+			</div>
+
+			<div class="contenu t_bloc_5">
+				<p class="texte">La poignée de la fenêtre pivote dans un grincement lugubre <i>*criiii*</i>. Vous décrochez les volets avant de les replier de chaque côté, les plaquant contre le mur avec un <i>*clac*</i> sonore. La fenêtre est protégée par des barreaux : impossible de passer par là. Le métal porte également des traces de griffes, comme si quelqu'un (ou quelque chose ?) avait tenté de forcer le passage.</p>
+				<p class="texte">Dehors, vous ne voyez pas à plus de dix mètres à cause de la brume. A la limite de votre champ de vision se trouve un énorme arbre solitaire, planté là sur l'herbe.</p>
+				<p class="texte">En vous tordant le coup vers la gauche, vous voyez le perron. Horreur ! Au-dessus du seuil de la porte se trouve une grande lame, attachée de manière à transpercer l'infortuné qui passerait sans précaution ! Un frisson vous agite <i>*brrr*</i> lorsque vous prenez conscience que vous auriez pu être cet infortuné...</p>
+				<hr/>
+				<p class="choix bloc_3">Fermer la fenêtre.</p>
+			</div>
+
+			<div class="contenu t_bloc_6">
+				<p class="texte">La porte n'est pas verrouillée. Vous tournez sa poignée sans difficulté <i>*criiii*</i> et poussez le battant vers l'extérieur lorsque qu'un son étrange survient, comme un glissement de métal sur de la pierre. Au même instant, vous entendez un bruit répugnant <i>*chlac*</i> et ressentez une douleur déchirante au niveau de l'abdomen. Une lame énorme vient de vous transpercer de part en part !</p>
+				<p class="texte">Vous saississez la lame entre vos mains et vous tirez de toutes vos forces, ignorant pour l'instant l'intense douleur qui ravage votre système nerveux. Vous sentez le sang, votre sang, qui coule à flot <i>*splach*</i> de votre blessure.</p>
+				<p class="texte">Malheureusement, vos forces vous abandonnent très vite en même temps que votre sang se répand sur le sol. Votre vision se brouille et vous finissez par vous effondrer, à demi-conscient.
+				<hr/>
+				<p class="choix bloc_9">Fermer les yeux et laisser la mort vous étreindre...</p>	
+			</div>
+
+			<div class="contenu t_bloc_7">
+				<p class="texte">Située au creux de votre coude, la marque ressemble fortement à une trace de piqûre, sans doute provoquée par l'aiguille d'une seringue.</p>
+				<p class="texte">Qu'est ce qu'on vous a injecté ? Qui ? Et pourquoi ?</p>
+				<hr/>
+				<p class="choix bloc_1">Regarder les alentours.</p>
+			</div>
+
+			<div class="contenu t_bloc_8">
+				<p class="texte">La porte n'est pas verrouillée. Vous tournez sa poignée sans difficulté <i>*criiii*</i>  et poussez le battant vers l'extérieur lorsque qu'un son étrange survient, comme un glissement de métal sur de la pierre. Vous rappelant ce que vous avez vu par la fenêtre, vous faites un bond en arrière alors qu'une lame énorme vient prendre la place que vous occupiez à l'instant <i>*chtoc*</i> .</p>
+				<p class="texte">Il s'en est fallu de peu !</p>
+				<hr/>
+				<p class="choix bloc_10">Se faufiler entre la lame et le chambranle.</p>
+			</div>
+
+			<div class="contenu t_bloc_9">
+				<p class="texte">Vous êtes mort. Vous avez eu le temps d'effectuer <span id="duree_mort"></span> actions avant de succomber. Peut-être ferez-vous mieux la prochaine fois ?</p>
+				<hr/>
+				<p class="choix bloc_0">Recommencer.</p>		
+			</div>
+			
+			<div class="contenu t_bloc_10">
+				<p class="texte visible" id="perron_vetements_non_trouves">La brume noie les environs sous un linceul ouaté. L'air, plutôt frais, vous donne la chair de poule <i>*glagla*</i>. Votre simple T-shirt ne vous est pas d'un grand secours contre ce froid mordant...</p>
+				<p class="texte invisible" id="perron_vetements_trouves">La brume noie les environs sous un linceul ouaté. L'air est plutôt frais. Heureusement que vous avez trouvé ces vêtements ! Cela va sans doute vous éviter l'hypothermie.</p>
+				<p class="texte visible" id="perron_porte_entree_fermee">Alors que vous descendez les quelques marches du perron, vous entendez la porte se fermer violemment derrière vous en claquant violemment <i>*bang*</i> .</p>
+				<p class="texte">Vous poussez un soupir tout en vous frictionnant vigoureusement pour chasser le froid qui vous engourdit <i>*brrrr*</i>. Votre regard se promène sur les alentours : au nord se trouve l'immense arbre que vous avez déjà vu. Vous pouvez également longer le chalet d'un côté ou de l'autre.</p>
+				<hr/>
+				<p class="choix bloc_11">Monter le perron et ouvrir la porte.</p>
+				<p class="choix bloc_12">Se rapprocher de l'arbre.</p>
+				<p class="choix bloc_13">Suivre le mur vers l'ouest.</p>
+				<p class="choix bloc_14">Suivre le mur vers l'est.</p>
+			</div>
+
+			<div class="contenu t_bloc_11">
+				<p class="texte">Vous remontez les marches du perron avant d'essayer d'ouvrir la porte. Rien n'y fait <i>*han*</i>. Elle est complètement bloquée dans le chambranle... étrange, sachant que vous êtes passé par là il y a quelques minutes.</p>
+				<hr/>
+				<p class="choix bloc_10">Redescendre.</p>
+				<p class="choix bloc_16">Défoncer la porte.</p>
+			</div>
+
+			<div class="contenu t_bloc_12">
+				<p class="texte">L'arbre est vraiment immense. Le diamètre de son tronc doit faire dans les deux mètres et le sommet de ses branches s'enfonce dans la brume, ce qui vous empêche d'en discerner la cime.</p>
+				<p class="texte">Vous baissez les yeux et avez l'impression de voir un trou à sa base. Peut-être s'agit-il d'une simple illusion d'optique ? Vous relevez la tête et apercevez un peu plus loin, à la limite de votre champ de vision au nord, un mur de pierre estompé par le brouillard. Sans doute le mur d'enceinte. A l'opposé, au sud, surgit la masse réconfortante du chalet.</p>
+				<p class="texte visible" id="arbre_vetements_non_trouves">Maintenant que vous avez quitté l'abri offert par la maison, vous êtes continuellement fouetté par le vent glacial <i>*glagla*</i> qui souffle à vos oreilles. Vous savez que vous ne pourrez pas lutter longtemps contre le froid <i>*brrrr*</i> sans des vêtements plus appropriés.</p>
+				<p class="texte invisible" id="arbre_vetements_trouves">Maintenant que vous avez quitté l'abri offert par la maison, vous êtes continuellement fouetté par le vent glacial <i>*brrrr*</i> qui souffle à vos oreilles. Grâce aux vêtements chauds que vous portez, vous devriez pouvoir éviter l'hypothermie.</p>
+				<hr/>
+				<p class="choix bloc_10">Aller au perron.</p>
+				<p class="choix bloc_17">Examiner la base de l'arbre.</p>
+				<p class="choix bloc_18">Se diriger vers le mur de pierre.</p>
+			</div>
+
+			<div class="contenu t_bloc_13">
+				<p class="texte">En gardant le mur du chalet sur votre gauche, vous commencez à faire le tour du bâtiment. Alors que vous vous apprétez à tourner l'angle, vous entendez un grognement grave <i>*grrrr*</i> quelque part devant vous.</p>
+				<p class="texte">Pas très rassuré, vous levez les yeux pour tenter d'apercevoir la créature à l'origine de ce bruit. Sans doute un chien... sans doute. Continuer dans cette direction ne vous semble pas être l'idée de l'année.</p>
+				<hr/>
+				<p class="choix bloc_10">Retourner au perron.</p>
+				<p class="choix bloc_20">Continuer.</p>
+			</div>
+
+			<div class="contenu t_bloc_14">
+				<p class="texte">En gardant le mur du chalet sur votre droite, vous commencez à faire le tour du bâtiment. Vous tournez l'angle sans rien voir de particulier, hormis la brume qui semble s'étendre à l'infini à l'est, mer blanchâtre de mauvaise augure.</p>
+				<hr/>
+				<p class="choix bloc_10">Retourner au perron.</p>
+				<p class="choix bloc_26">Continuer à longer le mur.</p>
+			</div>
+
+			<div class="contenu t_bloc_15">
+				<p class="texte visible" id="serrure_utilisable">Vous insérez la clef rouillée trouvée au pied de l'arbre avant de la tourner <i>*clic clac*</i> dans la serrure, qui ne résiste pas plus de quelques secondes. La porte s'ouvre, vous livrant un passage vers ce qui ressemble à un garage.</p>
+				<p class="texte invisible" id="serrure_inutilisable">La porte est défoncée. Votre clef ne vous est donc d'aucune utilité. Si vous vous en sortez, vous en ferez un collier. En tout cas, le chemin vers le garage est libre.</p>
+				<hr/>
+				<p class="choix bloc_30">Entrer.</p>
+				<p class="choix bloc_24">Faire demi-tour.</p>
+			</div>
+
+			<div class="contenu t_bloc_16">
+				<p class="texte">Vous mettez quelques coups de pied dans la porte <i>*bang, bang*</i>, suivi de plusieurs bourrades d'épaule <i>*aïe*</i>. Malheureusement, elle ne bouge pas d'un iota. Continuer vous apporterait juste une épaule luxée.</p>
+				<hr/>
+				<p class="choix bloc_10">Redescendre.</p>
+			</div>
+
+			<div class="contenu t_bloc_17">
+				<p class="texte">Vous vous agenouillez devant l'arbre. Vos yeux ne vous ont pas trompé ! Il y a bien un renfoncement entre les racines noirâtres. Alors que vous êtes sur le point de repousser les feuilles mortes pour plonger votre main à l'intérieur, vous vous demandez s'il s'agit vraiment d'une bonne idée...</p>
+				<hr/>
+				<p class="choix bloc_12">Se relever.</p>
+				<p class="choix bloc_19">Explorer le renfoncement.</p>
+			</div>
+
+			<div class="contenu t_bloc_18">
+				<p class="texte">Vous atteignez un mur de pierre dont la hauteur dépasse certainement trois mètres. Pour ce que vous en voyez, son sommet est recouvert de barbelés. Impossible de passer par là.</p>
+				<p class="texte">A l'ouest, dans la brume, vous discernez à peine la grande grille qui permet de quitter la propriété. A l'est, rien d'autre que le mur qui se perd dans le brouillard. Dans vos souvenirs, il borde l'intégralité du terrain. En tournant votre regard vers le chalet, au sud, vous apercevez l'immense arbre solitaire qui surgit de la brume.</p>
+				<hr/>
+				<p class="choix bloc_12">Aller vers l'arbre.</p>
+				<p class="choix bloc_34">S'approcher de la grille.</p>
+			</div>
+
+			<div class="contenu t_bloc_19">
+				<p class="texte">Vous serrez les dents, fermez les yeux et plongez vos doigts dans le trou. Il fait moins froid là-dedans, comme si les racines et la terre exhalaient un peu de chaleur.</p>
+				<p class="texte visible" id="clef_trouvee">Après quelques tâtonnements, vous touchez quelque chose de particulièrement froid. De métallique. Petit. Vous refermez vos doigts sur l'objet et retirez votre main du trou. Dans votre paume repose une clef mangée par la rouille.</p>
+				<p class="texte invisible" id="clef_non_trouvee">Après quelques tâtonnements, vous n'avez pas l'impression qu'il reste quelque chose là-dedans. Hormis des vers <i>*beeerk*</i>, des feuilles mortes et de la terre.</p>
+				<hr/>
+				<p class="choix bloc_12">Se relever.</p>
+				<p class="choix bloc_19">Continuer à fouiller.</p>
+			</div>
+
+			<div class="contenu t_bloc_20">
+				<p class="texte">Vous entendez des grognements <i>*GrrRrr GRRrrrR*</i> non loin. En regardant vers l'ouest, vous apercevez dans la brume une niche de bonne taille, devant laquelle s'agite un énorme molosse.</p>
+				<p class="texte visible" id="molosse_visite_1">Le monstre tire sur sa chaîne, elle-même solidement accrochée à un piquet métallique. Solidement ? Vous n'en êtes pas si sûr... et vous n'avez pas du tout envie de rester pour le découvrir !</p>
+				<p class="texte invisible" id="molosse_visite_2">Le monstre est toujours là, toujours accroché à sa chaîne qui tient bon. A y regarder de plus prês, vous vous demandez si le piquet métallique n'a pas légèrement bougé...</p>
+				<p class="texte invisible" id="molosse_visite_3">Etrange... vous ne voyez plus le monstre. La chaîne gît au sol, une extrémité encore pendue au piquet métallique. Néanmoins, vous entendez encore le molosse même si vous n'arrivez pas à le voir à cause du brouillard.</p>
+				<p class="texte invisible" id="molosse_visite_4">Les grognements peinent à couvrir le bruit de votre respiration saccadée <i>*pff pff pff*</i>. Où est passé ce satané chien ?</p>
+				<p class="texte invisible" id="molosse_visite_5">Soudain, le monstre sort de la brume et se rue sur vous, la bave aux lèvres. Vous n'avez rien le temps de faire. Il vous saute à la gorge et vous arrache la trachée ainsi que la moitié du cou, ce qui projete <i>*vloooortch*</i> une traînée de sang en forme de virgule sur le mur du chalet.</p>
+				<hr/>
+				<p class="choix bloc_10 visible" id="molosse_option_1">Aller au perron.</p>
+				<p class="choix bloc_21 visible" id="molosse_option_2">Rejoindre l'arrière du chalet.</p>
+				<p class="choix bloc_22 invisible" id="molosse_visite_niche">Marcher jusqu'à la niche.</p>
+				<p class="choix bloc_9 invisible" id="molosse_mort">Fermer les yeux et laisser la mort vous étreindre...</p>	
+			</div>
+
+			<div class="contenu t_bloc_21">
+				<p class="texte">Vous voici à l'arrière du chalet. Malheureusement, il s'agit d'un cul de sac : un mur de pierre se dresse à l'est et se perd également dans la brume au sud. L'endroit est jonché de débris. Des planches et des tôles contre la maison. Des gravats par terre.</p>
+				<p class="texte">A l'ouest, vous entendez toujours les grognements <i>*grrrr grrr*</i> du molosse, ce qui n'est pas fait pour vous rassurer.</p>
+				<hr/>
+				<p class="choix bloc_20">Longer le mur vers le nord pour retourner à l'avant du chalet.</p>
+				<p class="choix bloc_24">Fouiller les débris.</p>
+				<p class="choix bloc_25">Retourner les gravats.</p>
+			</div>
+
+			<div class="contenu t_bloc_22">
+				<p class="texte">Ravalant votre peur, vous avancez dans la brume en direction de l'énorme niche. Ses contours se font de plus en plus précis à chaque instant. Vous n'entendez aucun bruit pour le moment, à l'esception de vos chaussures sur l'herbe humide.</p>
+				<p class="texte visible" id="sac_a_dos_present">Après quelques secondes, vous voilà devant la maisonnette de bois. Vous pourriez sans souci entrer à l'intérieur aux vues de sa taille imposante. En vous penchant légèrement, vous discernez un sac à dos en piteux état au fond, dans la pénombre.</p>
+				<p class="texte invisible" id="sac_a_dos_absent">Après quelques secondes, vous voilà devant la maisonnette de bois. Vous pourriez sans souci entrer à l'intérieur aux vues de sa taille imposante. Vous ne voyez plus rien à l'intérieur, dans la pénombre.</p>
+				<p class="texte">Soudain, vous entendez des grognements <i>*GrrRrr GRRrrrR*</i> derrière la niche. Le monstre n'est pas loin !</p>
+				<hr/>
+				<p class="choix bloc_20">Rebrousser chemin vers l'est et le chalet.</p>
+				<p class="choix bloc_23 visible" id="entrer_dans_la_niche">Entrer dans la niche.</p>
+			</div>
+
+			<div class="contenu t_bloc_23">
+				<p class="texte">Vous vous précipitez dans la niche, attrapez le sac à dos par une bretelle et filez sans demander votre reste.</p>
+				<hr/>
+				<p class="choix bloc_20">Retourner au chalet.</p>
+			</div>
+
+			<div class="contenu t_bloc_24">
+				<p class="texte visible" id="porte_intacte">Vous déplacez quelques planches et tôles. Derrière elles se trouve une porte en bois. Elle ne semble pas très solide et possède une grosse serrure.</p>
+				<p class="texte invisible" id="porte_défoncée">Vous déplacez quelques planches et tôles. Derrière elles se trouvent les restes d'une porte en bois. Totalement défoncée, elle pendouille sur ses charnières.</p>
+				<p class="texte">Les grognements <i>*GrrRrr GRRrrrR*</i> du molosse semblent se rapprocher. Un filet de sueur froide vous coule dans le dos.</p>
+				<hr/>
+				<p class="choix bloc_21">Remettre les débris en place.</p>
+				<p class="choix bloc_15 invisible" id="porte_clef_trouvee">Utiliser la clef trouvée au pied de l'arbre.</p>
+				<p class="choix bloc_29 visible" id="porte_deja_enfoncee_1">Enfoncer la porte.</p>
+				<p class="choix bloc_30 invisible" id="porte_deja_enfoncee_2">Franchir le seuil.</p>
+			</div>
+
+			<div class="contenu t_bloc_25">
+				<p class="texte">Vous vous baissez et fouillez une partie des gravats. Non loin de là, vous entendez encore les grondements <i>*grr grrrr*</i> du molosse. Malheureusement, vous ne trouvez rien d'intéressant. La seule chose que vous gagnez, c'est quelques égratignures sans gravité sur vos mains. Au moins, avec le froid <i>*brrrr*</i>, vous ne sentez presque pas la douleur.</p>
+				<hr/>
+				<p class="choix bloc_21">Se relever.</p>
+			</div>
+
+			<div class="contenu t_bloc_26">
+				<p class="texte">Vous voici à l'arrière du chalet. Malheureusement, un mur de pierre vous bloque le passage vers l'ouest et se prolonge à perte de vue vers le sud, dans la brume.</p>
+				<p class="texte">Vous pouvez voir dans le mur du chalet une porte en acier.</p>
+				<hr/>
+				<p class="choix bloc_10">Longer le mur vers le nord pour retourner à l'avant du chalet.</p>
+				<p class="choix bloc_27">Ouvrir la porte.</p>
+			</div>
+
+			<div class="contenu t_bloc_27">
+				<p class="texte">La porte est fermée. Vous ne voyez aucune serrure et l'ouvrir sans outil est impossible.</p>
+				<hr/>
+				<p class="choix bloc_10">Longer le mur vers le nord pour retourner à l'avant du chalet.</p>
+			</div>
+
+			<div class="contenu t_bloc_28">
+				<p class="texte visible" id="deux_flacons">L'armoire à pharmacie s'ouvre sans difficulté. A l'intérieur, il ne reste plus que deux flacons sans étiquette. Peut-être que l'un des deux pourrait ralentir le poison qui vous affaiblit de plus en plus ? Lequel ?</p>
+				<p class="texte invisible" id="un_flacon">L'armoire à pharmacie s'ouvre sans difficulté. A l'intérieur, il ne reste plus qu'un flacon sans étiquette.</p>
+				<p class="texte invisible" id="aucun_flacon">L'armoire à pharmacie s'ouvre sans difficulté. A l'intérieur, il ne reste plus rien d'autre que de la poussière.</p>
+				<hr/>
+				<p class="choix bloc_30">Fermer l'armoire à pharmacie.</p>
+				<p class="choix bloc_32 visible" id="flacon_blanc">Boire le flacon contenant le liquide blanc.</p>
+				<p class="choix bloc_33 visible" id="flacon_vert">Boire le flacon contenant le liquide vert.</p>
+			</div>
+
+			<div class="contenu t_bloc_29">
+				<p class="texte visible" id="porte_defoncee_1">Le bois de la porte est vermoulu et ne devrait pas opposer une résistance insurmontable.</p>
+				<p class="texte invisible" id="porte_defoncee_2">Votre coup de pied a enfoncé une planche de la porte. Encore un peu de travail !</p>
+				<p class="texte invisible" id="porte_defoncee_3">La porte vibre et craque <i>*crac*</i> sous l'impact alors qu'un gros morceau de bois se détache. Vous allez y arriver !</p>
+				<p class="texte invisible" id="porte_defoncee_4">Les planches craquent <i>*craac*</i>. Elles sont prêtes à céder, vous en metteriez votre main à couper.</p>
+				<p class="texte invisible" id="porte_defoncee_5">Dans un énorme craquement <i>*craaaac*</i>, la porte cède.</p>
+				<hr/>
+				<p class="choix bloc_24">Laisser la porte et remettre les débris en place.</p>
+				<p class="choix bloc_29 visible" id="defoncer_porte_1">Mettre un coup de pied dans le battant.</p>
+				<p class="choix bloc_29 invisible" id="defoncer_porte_2">Mettre un deuxième coup de pied pour agrandir le trou.</p>
+				<p class="choix bloc_29 invisible" id="defoncer_porte_3">Prendre de l'élan et donner un coup d'épaule sur la porte.</p>
+				<p class="choix bloc_29 invisible" id="defoncer_porte_4">Reprendre de l'élan et donner un autre coup d'épaule.</p>
+				<p class="choix bloc_30 invisible" id="defoncer_porte_5">Franchir le seuil.</p>
+			</div>
+
+			<div class="contenu t_bloc_30">
+				<p class="texte">Vous pénétrez dans un grand garage plein d'un fatras sans aucune organisation. Malheureusement pour vous, il ne contient aucun véhicule. Les grognements <i>*grrr*</i> du molosse sont attenués par le mur qui vous sépare.</p>
+				<p class="texte">En jetant un rapide coup d'œil aux alentours, vous remarquez plusieurs choses intéressantes : une petite armoire décorée d'une croix rouge délavée, un grand placard métallique tombé au sol et une porte d'acier dotée d'une barre d'ouverture (probablement à sens unique).</p>
+				<hr/>
+				<p class="texte invisible" id="flacon_sac_a_dos_trouve">Vous prenez enfin le temps de fouiller le sac à dos trouvé dans la niche du molosse. A l'intérieur, vous ne trouvez qu'un bout de papier sur lequel est écrit (probablement avec du sang) : "Le froid est ton ennemi tandis que l'espoir est ton allié".</p>
+				<p class="choix bloc_28">Ouvrir la petite armoire.</p>
+				<p class="choix bloc_31">Ouvrir le placard métallique.</p>
+				<p class="choix bloc_26 invisible" id="vetements_chauds_portes">Utiliser la porte d'acier pour sortir.</p>
+			</div>
+
+			<div class="contenu t_bloc_31">
+				<p class="texte visible" id="placard_vetements_non_trouves">Avec un peu d'huile de coude, le placard s'ouvre. A l'intérieur, le graal ! Des vêtements chauds et suffisamment de rations de survie pour plusieurs jours. Vous enfilez avec plaisir <i>*aaaah*</i> les vêtements et bourrez vos poches de rations de survie. Vous allez peut-être vous en sortir, finalement !</p>
+				<p class="texte invisible" id="placard_vetements_trouves">Le placard s'ouvre de nouveau sans difficulté. A l'intérieur, plus rien hormis quelques moutons de poussière. Vous avez déjà tout pris.</p>
+				<hr/>
+				<p class="choix bloc_30">Fermer le placard.</p>
+			</div>
+
+			<div class="contenu t_bloc_32">
+				<p class="texte">Sans hésiter, vous dévissez le bouchon du flacon blanc et avalez son contenu. Bien mal vous en a pris : vous sentez immédiatement une douleur intense <i>*aïe*</i> naître au creux de votre estomac...</p>
+				<hr/>
+				<p class="choix bloc_28">Jeter le flacon vide par terre.</p>
+			</div>
+
+			<div class="contenu t_bloc_33">
+				<p class="texte">Sans hésiter, vous dévissez le bouchon du flacon vert et avalez son contenu. Vous sentez une douce chaleur se diffuser dans votre corps, et la douleur en provenance de votre bras reflue légèrement...</p>
+				<hr/>
+				<p class="choix bloc_28">Jeter le flacon vide par terre.</p>
+			</div>
+
+			<div class="contenu t_bloc_34">
+				<p class="texte">Toute de fer forgée, la grille est particulièrement imposante. Par chance, elle est légèrement entrouverte, bloquée dans cette position par une branche tombée de l'immense arbre au sud. Vous pensez pouvoir arriver à vous faufiler par l'ouverture.</p>
+				<hr/>
+				<p class="choix bloc_18">Longer le mur vers l'est. Il n'est pas encore temps de partir.</p>
+				<p class="choix bloc_35">Franchir la grille.</p>
+			</div>
+
+			<div class="contenu t_bloc_35">
+				<p class="texte visible" id="fin_vetement_non_trouves">Vous laissez derrière vous la grille, le mur d'enceinte et ce maudit chalet. Malheureusement, vous êtes rapidement gagné par l'hypothermie et vous vous effondrez au sol. Lorsque vous expirez pour la dernière fois, vos pensées se tournent vers votre famille que vous ne verrez plus jamais...</p>
+				<p class="texte invisible" id="fin_vetement_trouves">Vous laissez derrière vous la grille, le mur d'enceinte et ce maudit chalet. Heureusement, vous êtes chaudement habillé et le froid n'a pas de prise sur vous. Malgré le poison qui infecte votre corps, vous avez bon espoir de réussir à rejoindre la civilisation pour chercher de l'aide. Alors que vous vous enfoncez dans la brume, vos pensées se tournent vers votre famille que vous espérez revoir très bientôt...</p>
+				<hr/>
+				<p class="choix bloc_9 visible" id="choix_fin_vetement_non_trouves">Fermer les yeux et laisser la mort vous étreindre...</p>	
+				<p class="choix bloc_36 invisible" id="choix_fin_vetement_trouves">S'enfoncer dans la brume.</p>
+			</div>
+
+			<div class="contenu t_bloc_36">
+				<p class="texte">Bravo ! Vous avez réussi à vous enfuir ! Cela vous a pris <span id="duree_reussite"></span> actions sur un maximum possible de <span id="max_duree"></span>. Arriverez-vous à réaliser un meilleur score la prochaine fois ?</p>
+				<hr/>
+				<p class="choix bloc_0">Recommencer.</p>		
+			</div>
+		</div>
+				
+		<!-- Script Javascript pour l'animation des choix -->
+		<script>
+			var liste_textes = document.getElementsByClassName("contenu");
+			var compteur_sante = 0;
+			var incrementation_sante = 2;
+			
+			// Variables pour les status
+			var clef_trouvee = false;
+			var molosse_visite = 0;
+			var sac_a_dos_trouve = false;
+			var porte_defoncee = 0;
+			var vetements_chauds_trouves = false;
+			var nbr_flacons_bu = 0;
+			var porte_entree_fermee = false;
+
+			// Fermeture initiale de tous les textes sauf du premier			
+			for (texte of liste_textes) {
+				if (!texte.classList.contains("t_bloc_999")) {
+					texte.style.maxHeight = null;
+				}
+				else {
+					texte.style.maxHeight = texte.scrollHeight + "px";
+				}
+			}
+			
+			// Initialisation de l'événement OnClick sur les choix
+			var liste_choix = document.getElementsByClassName("choix");
+
+			for (choix of liste_choix) {
+				choix.addEventListener("click", function() {
+					// Réduction du texte actuel
+					this.parentNode.style.maxHeight = null;
+
+					// Analyse des classes du choix pour déterminer le nouveau texte à ouvrir
+					var classe_nouveau_texte = "t_" + this.classList[1];
+					console.log("cible : " + classe_nouveau_texte);
+
+					// Vérification de la mort contextuelle du joueur
+					if(classe_nouveau_texte == "t_bloc_0"){
+						document.location.reload(true);
+					}
+					else {
+						// Mise à jour des status
+						// Difficulté facile
+						if(classe_nouveau_texte == "t_bloc_996"){
+							classe_nouveau_texte = "t_bloc_1";
+							incrementation_sante = 0.5;
+						}
+
+						// Difficulté normale
+						if(classe_nouveau_texte == "t_bloc_997"){
+							classe_nouveau_texte = "t_bloc_1";
+							incrementation_sante = 1;
+						}
+						
+						// Difficulté difficile
+						if(classe_nouveau_texte == "t_bloc_998"){
+							classe_nouveau_texte = "t_bloc_1";
+							incrementation_sante = 2;
+						}
+						
+						// Piège de la porte de sortie détecté
+						if(classe_nouveau_texte == "t_bloc_5"){
+							document.getElementById("piege_detecte").classList.replace("invisible","visible");
+						}
+						
+						// Perron
+						if(classe_nouveau_texte == "t_bloc_10"){
+							if(vetements_chauds_trouves){
+								document.getElementById("perron_vetements_non_trouves").classList.replace("visible","invisible");
+								document.getElementById("perron_vetements_trouves").classList.replace("invisible","visible");
+							}
+							
+							if(porte_entree_fermee){
+								document.getElementById("perron_porte_entree_fermee").classList.replace("visible","invisible");
+							}
+							else {
+								porte_entree_fermee = true;
+							}
+						}
+						
+						// Arbre
+						if(classe_nouveau_texte == "t_bloc_12"){
+							if(vetements_chauds_trouves){
+								document.getElementById("arbre_vetements_non_trouves").classList.replace("visible","invisible");
+								document.getElementById("arbre_vetements_trouves").classList.replace("invisible","visible");
+							}
+						}
+
+						// Clef du garage trouvée
+						if(classe_nouveau_texte == "t_bloc_19"){
+							if(clef_trouvee){
+								document.getElementById("clef_trouvee").classList.replace("visible","invisible");
+								document.getElementById("clef_non_trouvee").classList.replace("invisible","visible");
+							}
+							clef_trouvee = true;
+						}
+
+						// Confrontation avec le molosse
+						if(classe_nouveau_texte == "t_bloc_20"){
+							if(molosse_visite == 1){
+								document.getElementById("molosse_visite_1").classList.replace("visible","invisible");
+								document.getElementById("molosse_visite_2").classList.replace("invisible","visible");
+							}
+							else if(molosse_visite == 2){
+								document.getElementById("molosse_visite_2").classList.replace("visible","invisible");
+								document.getElementById("molosse_visite_3").classList.replace("invisible","visible");
+								document.getElementById("molosse_visite_niche").classList.replace("invisible","visible");
+							}
+							else if(molosse_visite == 3){
+								document.getElementById("molosse_visite_3").classList.replace("visible","invisible");
+								document.getElementById("molosse_visite_4").classList.replace("invisible","visible");
+							}
+							else if(molosse_visite == 4){
+								document.getElementById("molosse_visite_4").classList.replace("visible","invisible");
+								document.getElementById("molosse_visite_5").classList.replace("invisible","visible");
+								document.getElementById("molosse_option_1").classList.replace("visible","invisible");
+								document.getElementById("molosse_option_2").classList.replace("visible","invisible");
+								document.getElementById("molosse_visite_niche").classList.replace("visible","invisible");
+								document.getElementById("molosse_mort").classList.replace("invisible","visible");
+							}
+							molosse_visite++;
+						}
+						
+						// Sac à dos présent ou non dans la niche du molosse
+						if(classe_nouveau_texte == "t_bloc_22"){
+							if(sac_a_dos_trouve){
+								document.getElementById("sac_a_dos_present").classList.replace("visible","invisible");
+								document.getElementById("sac_a_dos_absent").classList.replace("invisible","visible");
+								document.getElementById("entrer_dans_la_niche").classList.replace("visible","invisible");
+							}
+						}
+
+						// Sac à dos ramassé
+						if(classe_nouveau_texte == "t_bloc_23"){
+							document.getElementById("flacon_sac_a_dos_trouve").classList.replace("invisible","visible");
+							sac_a_dos_trouve = true;
+						}
+
+						// Porte du garage
+						if(classe_nouveau_texte == "t_bloc_24"){
+							if(clef_trouvee){
+								document.getElementById("porte_clef_trouvee").classList.replace("invisible","visible");
+							}
+						}
+																																						
+						// Défoncer la porte du garage
+						if(classe_nouveau_texte == "t_bloc_29"){
+							if(porte_defoncee == 1){
+								document.getElementById("porte_defoncee_1").classList.replace("visible","invisible");
+								document.getElementById("defoncer_porte_1").classList.replace("visible","invisible");
+								document.getElementById("porte_defoncee_2").classList.replace("invisible","visible");
+								document.getElementById("defoncer_porte_2").classList.replace("invisible","visible");
+							}
+							else if(porte_defoncee == 2){
+								document.getElementById("porte_defoncee_2").classList.replace("visible","invisible");
+								document.getElementById("defoncer_porte_2").classList.replace("visible","invisible");
+								document.getElementById("porte_defoncee_3").classList.replace("invisible","visible");
+								document.getElementById("defoncer_porte_3").classList.replace("invisible","visible");
+							}
+							else if(porte_defoncee == 3){
+								document.getElementById("porte_defoncee_3").classList.replace("visible","invisible");
+								document.getElementById("defoncer_porte_3").classList.replace("visible","invisible");
+								document.getElementById("porte_defoncee_4").classList.replace("invisible","visible");
+								document.getElementById("defoncer_porte_4").classList.replace("invisible","visible");
+							}
+							else if(porte_defoncee == 4){
+								document.getElementById("porte_defoncee_4").classList.replace("visible","invisible");
+								document.getElementById("defoncer_porte_4").classList.replace("visible","invisible");
+								document.getElementById("porte_defoncee_5").classList.replace("invisible","visible");
+								document.getElementById("defoncer_porte_5").classList.replace("invisible","visible");
+
+								document.getElementById("porte_intacte").classList.replace("visible","invisible");
+								document.getElementById("porte_deja_enfoncee_1").classList.replace("visible","invisible");
+								document.getElementById("porte_défoncée").classList.replace("invisible","visible");
+								document.getElementById("porte_deja_enfoncee_2").classList.replace("invisible","visible");
+
+								document.getElementById("serrure_utilisable").classList.replace("visible","invisible");
+								document.getElementById("serrure_inutilisable").classList.replace("invisible","visible");
+							}
+							porte_defoncee++;
+						}
+
+						// Garage
+						if(classe_nouveau_texte == "t_bloc_30"){
+							if(vetements_chauds_trouves){
+								document.getElementById("vetements_chauds_portes").classList.replace("invisible","visible");
+							}
+						}
+
+						// Placard aux vêtements
+						if(classe_nouveau_texte == "t_bloc_31"){
+							if(!vetements_chauds_trouves){
+								vetements_chauds_trouves = true;
+							}
+							else {
+								document.getElementById("placard_vetements_non_trouves").classList.replace("visible","invisible");
+								document.getElementById("placard_vetements_trouves").classList.replace("invisible","visible");
+							}
+						}
+
+						// Flacon bu
+						if(classe_nouveau_texte == "t_bloc_32" || classe_nouveau_texte == "t_bloc_33"){
+							classe_nouveau_texte == "t_bloc_32" ? compteur_sante += 10 : compteur_sante -= 10;
+							classe_nouveau_texte == "t_bloc_32" ? document.getElementById("flacon_blanc").classList.replace("visible","invisible") : document.getElementById("flacon_vert").classList.replace("visible","invisible");
+							nbr_flacons_bu++;
+							
+							if(nbr_flacons_bu == 1){
+								document.getElementById("deux_flacons").classList.replace("visible","invisible");
+								document.getElementById("un_flacon").classList.replace("invisible","visible");
+							}
+							else if(nbr_flacons_bu == 2){
+								document.getElementById("un_flacon").classList.replace("visible","invisible");
+								document.getElementById("aucun_flacon").classList.replace("invisible","visible");
+							}
+						}
+
+						// Fin
+						if(classe_nouveau_texte == "t_bloc_35"){
+							if(vetements_chauds_trouves){
+								document.getElementById("fin_vetement_non_trouves").classList.replace("visible","invisible");
+								document.getElementById("choix_fin_vetement_non_trouves").classList.replace("visible","invisible");
+								document.getElementById("fin_vetement_trouves").classList.replace("invisible","visible");
+								document.getElementById("choix_fin_vetement_trouves").classList.replace("invisible","visible");
+							}
+						}
+						
+						if(classe_nouveau_texte == "t_bloc_36"){
+							document.getElementById("duree_reussite").innerHTML = compteur_sante;
+							document.getElementById("max_duree").innerHTML = etat_joueur.length;
+						}
+
+						// Affichage de l'état de santé du joueur
+						console.log("santé : "+ compteur_sante);
+						if(compteur_sante < etat_joueur.length) {
+							document.getElementById("affichage_sante").innerHTML = etat_joueur[Math.floor(compteur_sante)];
+						}
+						else {
+							// C'est la fin...
+							classe_nouveau_texte = "t_bloc_9";
+							document.getElementById("duree_mort").innerHTML = compteur_sante;
+							document.getElementById("affichage_sante").innerHTML = "Votre cœur vient de lâcher et vous vous effondrez sur le sol avant de pousser votre dernier soupir.";
+						}
+
+						// Mort du joueur
+						if(classe_nouveau_texte == "t_bloc_9"){
+							document.getElementById("duree_mort").innerHTML = compteur_sante;
+							document.getElementById("affichage_sante").innerHTML = "Votre cœur vient de lâcher et vous vous effondrez sur le sol avant de pousser votre dernier soupir.";
+						}
+
+						compteur_sante += incrementation_sante;
+						compteur_sante > etat_joueur.length ? compteur_sante = etat_joueur.length : "";
+						
+						// Affichage du nouveau texte
+						var nouveau_texte = document.getElementsByClassName(classe_nouveau_texte)[0];
+						nouveau_texte.style.maxHeight = nouveau_texte.scrollHeight + "px";
+					}
+				});
+			}
+		</script>	
+	</body>
+</html>
