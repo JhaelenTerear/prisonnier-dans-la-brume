@@ -240,16 +240,17 @@
 			</div>
 
 			<div class="contenu t_bloc_20">
-				<p class="texte">Vous entendez des grognements <i>*GrrRrr GRRrrrR*</i> non loin. En regardant vers l'ouest, vous apercevez dans la brume une niche de bonne taille, devant laquelle s'agite un énorme molosse.</p>
-				<p class="texte visible" id="molosse_visite_1">Le monstre tire sur sa chaîne, elle-même solidement accrochée à un piquet métallique. Solidement ? Vous n'en êtes pas si sûr... et vous n'avez pas du tout envie de rester pour le découvrir !</p>
-				<p class="texte invisible" id="molosse_visite_2">Le monstre est toujours là, toujours accroché à sa chaîne qui tient bon. A y regarder de plus prês, vous vous demandez si le piquet métallique n'a pas légèrement bougé...</p>
-				<p class="texte invisible" id="molosse_visite_3">Etrange... vous ne voyez plus le monstre. La chaîne gît au sol, une extrémité encore pendue au piquet métallique. Néanmoins, vous entendez encore le molosse même si vous n'arrivez pas à le voir à cause du brouillard.</p>
-				<p class="texte invisible" id="molosse_visite_4">Les grognements peinent à couvrir le bruit de votre respiration saccadée <i>*pff pff pff*</i>. Où est passé ce satané chien ?</p>
+				<p class="texte">En regardant vers l'ouest, vous apercevez dans la brume une niche de bonne taille. Vous entendez des grognements <i>*GrrRrr GRRrrrR*</i> non loin.</p>
+				<p class="texte visible" id="molosse_visite_1">Devant la niche, un énorme molosse tire sur sa chaîne, elle-même solidement accrochée à un piquet métallique. Solidement ? Vous n'en êtes pas si sûr... et vous n'avez pas du tout envie de rester pour le découvrir !</p>
+				<p class="texte invisible" id="molosse_visite_2">Le molosse est toujours là, devant sa niche, accroché à sa chaîne qui tient bon. A y regarder de plus près, vous vous demandez si le piquet métallique n'est pas un peu tordu...</p>
+				<p class="texte invisible" id="molosse_visite_3">Etrange... vous ne voyez plus le molosse même si vous l'entendez encore. La chaîne gît au sol, une extrémité toujours accrochée au piquet métallique.</p>
+				<p class="texte invisible" id="molosse_visite_4">Ils peinent à couvrir le bruit de votre respiration saccadée <i>*pff pff pff*</i>. Où est passé ce satané chien ?</p>
 				<p class="texte invisible" id="molosse_visite_5">Soudain, le monstre sort de la brume et se rue sur vous, la bave aux lèvres. Vous n'avez rien le temps de faire. Il vous saute à la gorge et vous arrache la trachée ainsi que la moitié du cou, ce qui projete <i>*vloooortch*</i> une traînée de sang en forme de virgule sur le mur du chalet.</p>
 				<hr/>
 				<p class="choix bloc_10 visible" id="molosse_option_1">Aller au perron.</p>
-				<p class="choix bloc_21 visible" id="molosse_option_2">Rejoindre l'arrière du chalet.</p>
+				<p class="choix bloc_20 visible" id="molosse_option_3">Attendre.</p>
 				<p class="choix bloc_22 invisible" id="molosse_visite_niche">Marcher jusqu'à la niche.</p>
+				<p class="choix bloc_21 visible" id="molosse_option_2">Rejoindre l'arrière du chalet.</p>
 				<p class="choix bloc_9 invisible" id="molosse_mort">Fermer les yeux et laisser la mort vous étreindre...</p>	
 			</div>
 
@@ -503,6 +504,7 @@
 								document.getElementById("molosse_visite_5").classList.replace("invisible","visible");
 								document.getElementById("molosse_option_1").classList.replace("visible","invisible");
 								document.getElementById("molosse_option_2").classList.replace("visible","invisible");
+								document.getElementById("molosse_option_3").classList.replace("visible","invisible");
 								document.getElementById("molosse_visite_niche").classList.replace("visible","invisible");
 								document.getElementById("molosse_mort").classList.replace("invisible","visible");
 							}
