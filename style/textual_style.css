@@ -1,13 +1,3 @@
-/*
-.centre {
-	text-align: center;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-}
-*/
-
 .centre {
 	padding: 5%;
 }
@@ -15,9 +5,10 @@
 /* Style des paragraphes */
 .texte {
 	font-family: Tahoma, Geneva, sans-serif;
-	line-height: 1.3;
 	padding-bottom: 30px;
 	padding-top: -15px;
+	padding-left: 50px;
+	padding-right: 50px;
 	font-size: 1.3em;
 }
 
@@ -27,30 +18,35 @@
 	font-style: italic;
 	line-height: 0.9;
 	padding-bottom: 30px;
+	padding-left: 50px;
+	padding-right: 50px;
 }
 
 .choix {
 	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 	font-size: 1.2em;
 	cursor: pointer;
+	padding-left: 35px;
+	padding-right: 35px;
+}
+
+.choix:before{
+	content: "\00a0\00a0\00a0";
 }
 
 .choix:hover {
 	text-decoration: underline;
+	/* font-weight: bold; */
 }
 
 .choix:hover:before {
 	content: "> ";
 }
 
-.choix:hover:after {
-	content: " <";
-}
-
 .contenu {
 	max-height: 0;
 	overflow: hidden;
-	transition: max-height 0.3s ease-out;
+	transition: max-height 0.2s ease-in-out;
 }
 
 .invisible {
