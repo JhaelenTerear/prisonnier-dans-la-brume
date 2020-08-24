@@ -1,2 +1,2 @@
-# simplon-textual
-Petit jeu textuel en lien avec ma candidature chez Simplon Chambéry
+# Prisonnier dans la brume
+Jeu textuel sans prétention développé en HTML / CSS / Javascript.
